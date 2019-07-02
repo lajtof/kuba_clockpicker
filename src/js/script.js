@@ -10,9 +10,10 @@ $(document).ready(function() {
                 var startTime = new Date("1/1/1970 " + start.val());
                 var endTime = new Date("1/1/1970 " + end.val());
 
-                var diff = formatDate((endTime - startTime) / 1000);
-
-                $('#result-time').val(diff);
+                if(startTime < endTime) {
+                    var diff = formatDate((endTime - startTime) / 1000);
+                    $('#result-time').val(diff);
+                }
             }
         })
     })
